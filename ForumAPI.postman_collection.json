@@ -1,0 +1,446 @@
+{
+    "info": {
+      "name": "Forum API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Users",
+        "item": [
+          {
+            "name": "Create User",
+            "request": {
+              "method": "POST",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"email\": \"reza@example.com\",\n  \"username\": \"reza\",\n  \"password\": \"password123\",\n  \"avatarUrl\": \"https://example.com/avatar.jpg\",\n  \"role\": \"user\"\n}"
+              },
+              "url": {
+                "raw": "http://localhost:5000/api/users",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "5000",
+                "path": ["api", "users"]
+              }
+            }
+          },
+          {
+            "name": "Get All Users",
+            "request": {
+              "method": "GET",
+              "url": {
+                "raw": "http://localhost:5000/api/users",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "5000",
+                "path": ["api", "users"]
+              }
+            }
+          },
+          {
+            "name": "Get User by ID",
+            "request": {
+              "method": "GET",
+              "url": {
+                "raw": "http://localhost:5000/api/users/6571283a1f0c4b001f3c1236",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "5000",
+                "path": ["api", "users", "6571283a1f0c4b001f3c1236"]
+              }
+            }
+          },
+          {
+            "name": "Update User",
+            "request": {
+              "method": "PUT",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"username\": \"reza_updated\",\n  \"isActive\": true\n}"
+              },
+              "url": {
+                "raw": "http://localhost:5000/api/users/6571283a1f0c4b001f3c1236",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "5000",
+                "path": ["api", "users", "6571283a1f0c4b001f3c1236"]
+              }
+            }
+          },
+          {
+            "name": "Delete User",
+            "request": {
+              "method": "DELETE",
+              "url": {
+                "raw": "http://localhost:5000/api/users/6571283a1f0c4b001f3c1236",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "5000",
+                "path": ["api", "users", "6571283a1f0c4b001f3c1236"]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Topics",
+        "item": [
+          {
+            "name": "Create Topic",
+            "request": {
+              "method": "POST",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"userId\": \"6571283a1f0c4b001f3c1236\",\n  \"categoryId\": \"6571283a1f0c4b001f3c1244\",\n  \"title\": \"React Hooks\",\n  \"content\": \"React hooks simplify state management.\",\n  \"tags\": [\"react\", \"hooks\", \"javascript\"]\n}"
+              },
+              "url": {
+                "raw": "http://localhost:5000/api/topics",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "5000",
+                "path": ["api", "topics"]
+              }
+            }
+          },
+          {
+            "name": "Get All Topics",
+            "request": {
+              "method": "GET",
+              "url": {
+                "raw": "http://localhost:5000/api/topics",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "5000",
+                "path": ["api", "topics"]
+              }
+            }
+          },
+          {
+            "name": "Get Topic by ID",
+            "request": {
+              "method": "GET",
+              "url": {
+                "raw": "http://localhost:5000/api/topics/6571283a1f0c4b001f3c1244",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "5000",
+                "path": ["api", "topics", "6571283a1f0c4b001f3c1244"]
+              }
+            }
+          },
+          {
+            "name": "Update Topic",
+            "request": {
+              "method": "PUT",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"title\": \"Updated Topic Title\",\n  \"content\": \"Updated content for the topic.\"\n}"
+              },
+              "url": {
+                "raw": "http://localhost:5000/api/topics/6571283a1f0c4b001f3c1244",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "5000",
+                "path": ["api", "topics", "6571283a1f0c4b001f3c1244"]
+              }
+            }
+          },
+          {
+            "name": "Delete Topic",
+            "request": {
+              "method": "DELETE",
+              "url": {
+                "raw": "http://localhost:5000/api/topics/6571283a1f0c4b001f3c1244",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "5000",
+                "path": ["api", "topics", "6571283a1f0c4b001f3c1244"]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Comments",
+        "item": [
+          {
+            "name": "Create Comment",
+            "request": {
+              "method": "POST",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"userId\": \"6571283a1f0c4b001f3c1236\",\n  \"topicId\": \"6571283a1f0c4b001f3c1244\",\n  \"content\": \"This is a comment.\"\n}"
+              },
+              "url": {
+                "raw": "http://localhost:5000/api/comments",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "5000",
+                "path": ["api", "comments"]
+              }
+            }
+          },
+          {
+            "name": "Get All Comments",
+            "request": {
+              "method": "GET",
+              "url": {
+                "raw": "http://localhost:5000/api/comments",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "5000",
+                "path": ["api", "comments"]
+              }
+            }
+          },
+          {
+            "name": "Update Comment",
+            "request": {
+              "method": "PUT",
+              "header": [{ "key": "Content-Type", "value": "application/json" }],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"content\": \"Updated comment content.\"\n}"
+              },
+              "url": {
+                "raw": "http://localhost:5000/api/comments/6571283a1f0c4b001f3c1255",
+                "protocol": "http",
+                "host": ["localhost"],
+                "port": "5000",
+                "path": ["api", "comments", "6571283a1f0c4b001f3c1255"]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "info": {
+          "name": "Forum API",
+          "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+        },
+        "item": [
+          {
+            "name": "Users",
+            "item": [
+              {
+                "name": "Create User",
+                "request": {
+                  "method": "POST",
+                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"email\": \"reza@example.com\",\n  \"username\": \"reza\",\n  \"password\": \"password123\",\n  \"avatarUrl\": \"https://example.com/avatar.jpg\",\n  \"role\": \"user\"\n}"
+                  },
+                  "url": {
+                    "raw": "http://localhost:5000/api/users",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "5000",
+                    "path": ["api", "users"]
+                  }
+                }
+              },
+              {
+                "name": "Get All Users",
+                "request": {
+                  "method": "GET",
+                  "url": {
+                    "raw": "http://localhost:5000/api/users",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "5000",
+                    "path": ["api", "users"]
+                  }
+                }
+              },
+              {
+                "name": "Get User by ID",
+                "request": {
+                  "method": "GET",
+                  "url": {
+                    "raw": "http://localhost:5000/api/users/6571283a1f0c4b001f3c1236",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "5000",
+                    "path": ["api", "users", "6571283a1f0c4b001f3c1236"]
+                  }
+                }
+              },
+              {
+                "name": "Update User",
+                "request": {
+                  "method": "PUT",
+                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"username\": \"reza_updated\",\n  \"isActive\": true\n}"
+                  },
+                  "url": {
+                    "raw": "http://localhost:5000/api/users/6571283a1f0c4b001f3c1236",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "5000",
+                    "path": ["api", "users", "6571283a1f0c4b001f3c1236"]
+                  }
+                }
+              },
+              {
+                "name": "Delete User",
+                "request": {
+                  "method": "DELETE",
+                  "url": {
+                    "raw": "http://localhost:5000/api/users/6571283a1f0c4b001f3c1236",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "5000",
+                    "path": ["api", "users", "6571283a1f0c4b001f3c1236"]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "Topics",
+            "item": [
+              {
+                "name": "Create Topic",
+                "request": {
+                  "method": "POST",
+                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"userId\": \"6571283a1f0c4b001f3c1236\",\n  \"categoryId\": \"6571283a1f0c4b001f3c1244\",\n  \"title\": \"React Hooks\",\n  \"content\": \"React hooks simplify state management.\",\n  \"tags\": [\"react\", \"hooks\", \"javascript\"]\n}"
+                  },
+                  "url": {
+                    "raw": "http://localhost:5000/api/topics",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "5000",
+                    "path": ["api", "topics"]
+                  }
+                }
+              },
+              {
+                "name": "Get All Topics",
+                "request": {
+                  "method": "GET",
+                  "url": {
+                    "raw": "http://localhost:5000/api/topics",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "5000",
+                    "path": ["api", "topics"]
+                  }
+                }
+              },
+              {
+                "name": "Get Topic by ID",
+                "request": {
+                  "method": "GET",
+                  "url": {
+                    "raw": "http://localhost:5000/api/topics/6571283a1f0c4b001f3c1244",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "5000",
+                    "path": ["api", "topics", "6571283a1f0c4b001f3c1244"]
+                  }
+                }
+              },
+              {
+                "name": "Update Topic",
+                "request": {
+                  "method": "PUT",
+                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"title\": \"Updated Topic Title\",\n  \"content\": \"Updated content for the topic.\"\n}"
+                  },
+                  "url": {
+                    "raw": "http://localhost:5000/api/topics/6571283a1f0c4b001f3c1244",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "5000",
+                    "path": ["api", "topics", "6571283a1f0c4b001f3c1244"]
+                  }
+                }
+              },
+              {
+                "name": "Delete Topic",
+                "request": {
+                  "method": "DELETE",
+                  "url": {
+                    "raw": "http://localhost:5000/api/topics/6571283a1f0c4b001f3c1244",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "5000",
+                    "path": ["api", "topics", "6571283a1f0c4b001f3c1244"]
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "Comments",
+            "item": [
+              {
+                "name": "Create Comment",
+                "request": {
+                  "method": "POST",
+                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"userId\": \"6571283a1f0c4b001f3c1236\",\n  \"topicId\": \"6571283a1f0c4b001f3c1244\",\n  \"content\": \"This is a comment.\"\n}"
+                  },
+                  "url": {
+                    "raw": "http://localhost:5000/api/comments",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "5000",
+                    "path": ["api", "comments"]
+                  }
+                }
+              },
+              {
+                "name": "Get All Comments",
+                "request": {
+                  "method": "GET",
+                  "url": {
+                    "raw": "http://localhost:5000/api/comments",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "5000",
+                    "path": ["api", "comments"]
+                  }
+                }
+              },
+              {
+                "name": "Update Comment",
+                "request": {
+                  "method": "PUT",
+                  "header": [{ "key": "Content-Type", "value": "application/json" }],
+                  "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"content\": \"Updated comment content.\"\n}"
+                  },
+                  "url": {
+                    "raw": "http://localhost:5000/api/comments/6571283a1f0c4b001f3c1255",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "5000",
+                    "path": ["api", "comments", "6571283a1f0c4b001f3c1255"]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+      
+    ]
+  }
+  
