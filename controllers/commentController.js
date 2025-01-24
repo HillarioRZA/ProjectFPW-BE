@@ -1,4 +1,4 @@
-const Comment = require('../models/Comment');
+const Comment = require('../models/comment');
 const User = require('../models/user');
 const Topic = require('../models/Topic');
 const { updateTopicCommentCount } = require('./topicController');

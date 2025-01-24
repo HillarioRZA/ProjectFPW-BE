@@ -1,6 +1,6 @@
 const User = require('../models/user');
-const Topic = require('../models/Topic');
-const Comment = require('../models/Comment');
+const Topic = require('../models/topic');
+const Comment = require('../models/comment');
 const Category = require('../models/Category');
 
 const getDashboardStats = async (req, res) => {

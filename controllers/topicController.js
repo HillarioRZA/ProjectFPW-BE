@@ -1,6 +1,6 @@
-const Topic = require('../models/Topic');
+const Topic = require('../models/topic');
 const Category = require('../models/Category');
-const Comment = require('../models/Comment');
+const Comment = require('../models/comment');
 
 // Create Topic
 const createTopic = async (req, res) => {
